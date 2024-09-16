@@ -63,15 +63,15 @@ def play(choice):
 
 @app.route('/results')
 def results():
-    player_choice = session.get('playerchoice')
-    computer_choice = session.get('computerchoice')
+    playerchoice = session.get('playerchoice')
+    computerchoice = session.get('computerchoice')
     result = session.get('result')
-    total_wins = session.get('totalwins')
-    total_losses = session.get('totallosses')
+    totalwins = session.get('totalwins')
+    totallosses = session.get('totallosses')
 
-    return render_template('results.html', player_choice=player_choice,
-                           computer_choice=computer_choice, result=result,
-                           total_wins=total_wins, total_losses=total_losses)
+    return render_template('results.html', player_choice=playerchoice,
+                           computer_choice=computerchoice, result=result,
+                           total_wins=totalwins, total_losses=totallosses)
 
 
 @app.route('/reset')

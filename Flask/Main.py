@@ -37,7 +37,7 @@ class RockPaperScissorsGame:
             return "You lose!"
 
 game = RockPaperScissorsGame()
-#Test
+#Test2
 @app.route('/')
 def index():
     return render_template("index.html")

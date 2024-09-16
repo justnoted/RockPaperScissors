@@ -8,7 +8,7 @@ class RockPaperScissorsGame:
     def __init__(self):
         self.totalwins = 0
         self.totallosses = 0
-        self.options = ['rock', 'paper', 'scissors', 'random']
+        self.options = ['rock', 'paper', 'scissors', 'jarrett']
         self.playerchoice = None
         self.computerchoice = None
 

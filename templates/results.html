@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+  {% extends "layout.html" %}
+  {% block content %}
+
+    <h1>Game Results</h1>
+
+
+    <div class="result-images">
+        <h2>Your Choice</h2>
+      <!--Add the link to the images-->
+        <img src="" alt="Your choice">
+
+        <h2>Computer's Choice</h2>
+        <img src="" alt="Computer's choice">
+    </div>
+
+    <h3>{{ result }}</h3>
+
+
+    <p>Wins: {{ wins }} | Losses: {{ losses }}</p>
+    <!--Need to add the link to play again-->
+    <a href="">Play Again</a>
+  {% endblock %}
+
+</body>
+</html>

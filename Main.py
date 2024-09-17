@@ -57,8 +57,8 @@ def play(choice):
     game.setplayerchoice(choice)
     game.setcomputerchoice()
 
-    session['player_choice'] = game.playerchoice
-    session['computer_choice'] = game.computerchoice
+    session['playerchoice'] = game.playerchoice
+    session['computerchoice'] = game.computerchoice
     result = game.getwinner()
     session['result'] = result
     session['totalwins'] = game.totalwins
@@ -82,8 +82,8 @@ def results():
 
 @app.route('/reset')
 def reset():
-    game.total_wins = 0
-    game.total_losses = 0
+    game.totalwins = 0
+    game.totallosses = 0
     return redirect(url_for('index'))
 
 

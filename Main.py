@@ -15,7 +15,7 @@ class RockPaperScissorsGame:
         self.computerchoice = None
 
     def setplayerchoice(self, choice):
-        self.playerchoice = choice
+        self.playerchoice = choice + ".png"
 
     def setcomputerchoice(self):
         self.computerchoice = random.choice(self.options)
@@ -52,32 +52,19 @@ def game_page():
     return render_template('game.html')
 
 
-@app.route('/play')
-def play(choice):
-    game.setplayerchoice(choice)
+@app.route('/results')
+def results():
+    id_value = request.args.get('id')
+    game.setplayerchoice(id_value)
     game.setcomputerchoice()
 
     session['playerchoice'] = game.playerchoice
     session['computerchoice'] = game.computerchoice
-    result = game.getwinner()
-    session['result'] = result
+    session['result'] = game.getwinner()
     session['totalwins'] = game.totalwins
     session['totallosses'] = game.totallosses
 
-    return redirect(url_for('results'))
-
-
-@app.route('/results')
-def results():
-    playerchoice = session.get('playerchoice')
-    computerchoice = session.get('computerchoice')
-    result = session.get('result')
-    totalwins = session.get('totalwins')
-    totallosses = session.get('totallosses')
-
-    return render_template('results.html', player_choice=playerchoice,
-                           computer_choice=computerchoice, result=result,
-                           total_wins=totalwins, total_losses=totallosses)
+    return render_template('results.html')
 
 
 @app.route('/reset')

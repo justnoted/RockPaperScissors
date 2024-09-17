@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Results</title>
-    #Pass back string image (ADDITIONAL STRING VALUE ..//)
-  #user chose rock if statement to decide what image to
-  #on the same page just grabbing the entire string value
-  #hardcode that string value to the front using that variables
 </head>
 <body>
   {% extends "layout.html" %}
@@ -16,22 +12,17 @@
 
     <div class="result-images">
         <h2>Your Choice</h2>
-        <!--Add the link to the images--> #{{ ../img/paper.png }}
-        ../static/images/rock.png
-        #How to link
-
-        <img src="" alt="Your choice">
+        <img src="{{ url_for('static/images', filename=session['playerchoice']) }}">
 
         <h2>Computer's Choice</h2>
-        <img src="" alt="Computer's choice">
+        <img src="{{ url_for('static/images', filename=session['computerchoice']) }}">
     </div>
 
     <h3>{{ result }}</h3>
 
 
     <p>Wins: {{ wins }} | Losses: {{ losses }}</p>
-    <!--Need to add the link to play again-->
-    <a href="">Play Again</a>
+    <a href="{{ url_for('game') }}">Play Again</a>
   {% endblock %}
 
 </body>

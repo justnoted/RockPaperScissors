@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Results</title>
+    #Pass back string image (ADDITIONAL STRING VALUE ..//)
+  #user chose rock if statement to decide what image to
+  #on the same page just grabbing the entire string value
+  #hardcode that string value to the front using that variables
 </head>
 <body>
   {% extends "layout.html" %}
@@ -10,10 +14,12 @@
 
     <h1>Game Results</h1>
 
-
     <div class="result-images">
         <h2>Your Choice</h2>
-      <!--Add the link to the images-->
+        <!--Add the link to the images--> #{{ ../img/paper.png }}
+        ../static/images/rock.png
+        #How to link
+
         <img src="" alt="Your choice">
 
         <h2>Computer's Choice</h2>

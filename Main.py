@@ -48,7 +48,7 @@ def index():
 
 
 @app.route('/game')
-def game_page():
+def game():
     return render_template('game.html')
 
 

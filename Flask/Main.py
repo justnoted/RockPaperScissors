@@ -1,8 +1,10 @@
 import random
 
 from flask import Flask, render_template, request, flash, redirect, url_for, session
+
 app = Flask(__name__)
 app.secret_key = 'Game'
+
 
 class RockPaperScissorsGame:
     def __init__(self):
@@ -26,7 +28,7 @@ class RockPaperScissorsGame:
             'rock': ['scissors', 'jarrett'],
             'paper': ['rock'],
             'scissors': ['paper'],
-            'jarrett': ['paper','scissors']
+            'jarrett': ['paper', 'scissors']
         }
 
         if self.computerchoice in winconditions[self.playerchoice]:
@@ -36,11 +38,15 @@ class RockPaperScissorsGame:
             self.totallosses += 1
             return "You lose!"
 
+
 game = RockPaperScissorsGame()
+
 
 @app.route('/')
 def index():
     return render_template("index.html")
+
+
 @app.route('/game')
 def game_page():
     return render_template('game.html')
@@ -79,6 +85,7 @@ def reset():
     game.total_wins = 0
     game.total_losses = 0
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run()

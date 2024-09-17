@@ -1,0 +1,13 @@
+img {
+    width: 150px;
+    padding: 10px;
+    margin: 15px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    position: relative;
+}
+
+img:hover {
+    transform: scale(110%);
+    background-color: #2865b5;
+}

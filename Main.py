@@ -11,8 +11,8 @@ class RockPaperScissorsGame:
         self.totalwins = 0
         self.totallosses = 0
         self.options = ['rock', 'paper', 'scissors', 'jarrett']
-        self.playerchoice = None
-        self.computerchoice = None
+        self.playerchoice = ""
+        self.computerchoice = ""
 
     def setplayerchoice(self, choice):
         self.playerchoice = choice + ".png"
@@ -64,7 +64,7 @@ def results():
     session['totalwins'] = game.totalwins
     session['totallosses'] = game.totallosses
 
-    return render_template('results.html')
+    return render_template('results.html', ret_val=id_value)
 
 
 @app.route('/reset')

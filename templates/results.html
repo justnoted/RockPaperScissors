@@ -12,10 +12,10 @@
 
     <div class="result-images">
         <h2>Your Choice</h2>
-        <img src="{{ url_for('static/images', filename=session['playerchoice']) }}">
+        <img src="{{ url_for('../static/images', filename=session['playerchoice']) }}">
 
         <h2>Computer's Choice</h2>
-        <img src="{{ url_for('static/images', filename=session['computerchoice']) }}">
+        <img src="{{ url_for('../static/images', filename=session['computerchoice']) }}">
     </div>
 
     <h3>{{ result }}</h3>
